@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.ico" rel="icon">
+    <link rel="stylesheet" href="style.css" />
+    <title>Violation System | Log-in</title>
+  </head>
+
+  <!-- Sign-in/log-in form -->
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form" id="login">
+            <h2 class="title">Sign in</h2>
+
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="lg-username" placeholder="Username"  required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="lg-password" placeholder="Password" required/>
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            
+          </form>
+
+
+
+          <!--- Sign-up form-->
+          <form action="#" class="sign-up-form" id="signup">
+            <h2 class="title">Sign up</h2>
+
+
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" id="sg-username" placeholder="Username" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="sg-email" placeholder="Email" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="sg-password" placeholder="Password" required/>
+            </div>
+            <input type="submit" class="btn" value="Sign up" />
+            
+          </form>
+        </div>
+      </div>
+
+
+      <!-- Panel animation -->
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              hit that sign-up button to explore more of our services!
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="img/signup.svg" class="image" alt="universe" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              hit that sign-in button to log back in! 
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="img/login.svg" class="image" alt="mobile" />
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="app.js"></script>
+    
+  </body>
+</html>
