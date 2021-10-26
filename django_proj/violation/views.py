@@ -16,4 +16,4 @@ def scan(request):
     return render(request, 'task/scan.html')
 
 def create(request):
-    return render(request, 'task/create.html')    
+    return render(request, 'task/create.html')   
