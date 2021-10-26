@@ -1,0 +1,540 @@
+{% load static %}
+<html>
+
+<head>
+    <meta name="description" content="QR Code scanner" />
+    <meta name="keywords" content="qrcode,qr code,scanner,barcode,javascript" />
+    <meta name="language" content="English" />
+    <meta name="Revisit-After" content="1 Days" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Violation System | Scan QR</title>
+
+
+      <!-- Vendor CSS Files -->
+      <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+      <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+      <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+      <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+      <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+       <!-- static css-->
+
+        <!-- Template Main CSS File (GALING SA STATIC NA FOLDER) -->
+  
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/icofont/icofont.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/venobox/venobox.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/remixicon/remixicon.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/aos/aos.css' %}">
+        <link href="{% static 'css/inner-page-style.css' %}" rel="stylesheet"> 
+
+    <!-- Favicons -->
+    <link rel="stylesheet" type="text/css" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/scan-style.css' %}" rel="stylesheet">
+    
+    
+
+    <style type="text/css">
+    
+        img {
+            border: 0;
+        }
+
+        #main {
+            margin: 15px auto;
+            color: white;
+            overflow: auto;
+            width: 100%;
+        }
+
+        #header {  
+            margin-bottom: 10px;
+        }
+
+        #mainbody {
+            
+            width: 100%;
+            display: none;
+        }
+
+        #v {
+            width: 320px;
+            height: 240px;
+        }
+
+
+        #qr-canvas {
+            display: none;
+        }
+
+        #qrfile {
+            width: 320px;
+            height: 240px;
+        }
+
+        #mp1 {
+            padding-top: 70px;
+            cursor: default;
+            text-align: center;
+            font-size: 35px;
+            font-weight: 700;
+            color: white;
+        }
+
+        #imghelp {
+            position: relative;
+            left: 0px;
+            top: -160px;
+            z-index: 100;
+            font: 18px arial, sans-serif;
+            background: #f0f0f0;
+            margin-left: 35px;
+            margin-right: 35px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 20px;
+        }
+
+        .selector {
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            margin-bottom: -5px;
+        }
+
+
+        #outdiv {
+            width: 320px;
+            height: 240px;
+            border: solid;
+            border-width: 3px 3px 3px 3px;
+        }
+
+        #result {
+            color: white;
+            background-color: #151617;
+            border: 2px solid #ffbb38;
+            padding: 20px;
+            width: 70%;
+        }
+
+        .navQR{
+            top: 15em;
+            left: 20em;
+            text-align: center;
+            justify-content: center;
+        }
+        
+
+        .navQR ul {
+            margin-bottom: 0;
+            margin-right: 40px;
+        }
+
+        .navQR ul li {
+            display: inline;
+            padding-right: 0.5em;
+            padding-left: 0.5em;
+            justify-items: center;
+            font-weight: bold;
+            border-right: 1px solid white;
+        }
+
+        .navQR li a {
+            text-decoration: none;
+            color: white;
+            text-align: center;
+        }
+
+        .navQR li a:hover {
+            text-decoration: none;
+            color: #ffbb38;
+            text-align: center;
+        }
+
+        
+
+        .tsel {
+            padding: 0;
+        }
+    </style>
+
+    <script type="text/javascript" src="{% static 'js/llqrcode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plusone.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/webqr.js' %}"></script>
+
+    
+
+ 
+
+</head>
+
+<body>
+
+
+    <!-- Header -->
+    <header id="header" class="fixed-top header-inner-pages">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <h1 class="logo"><a href="../index.html">violation system<span>.</span></a></h1>
+
+
+            <!-- Navigation bar -->
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li><a href="../innerpage.php">Home</a></li> <!-- BABAGUHIN 10/23/22 -->
+                    <li class="active"><a href="../scanning qr/index.html">Scan QR</a></li>
+                    <li><a href="../v-table.html">View Violation List</a></li>
+        
+
+                </ul>
+            </nav>
+
+            <a href="../index.html" class="logout-btn">Log-out</a>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="inner-page">
+        <div id="bg">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="150">
+                <div id="header">
+                    <div style="position:relative;top:+20px;left:0px;">
+                        <g:plusone size="medium"></g:plusone>
+                    </div>
+                    <p id="mp1">
+                        QR Code scanner
+                    </p>
+                    <div class="navQR">
+
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a id="scanLink" class="nav-link active" href="index.html">Scan QR</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="createLink" class="nav-link" href="create.html">Create QR</a>
+                            </li>
+                        </ul>
+
+                    
+                    </div>
+                    
+                </div>
+                <div id="mainbody">
+                    <table class="tsel" border="0" width="100%">
+                        <tr>
+                            <td valign="top" align="center" width="50%">
+                                <table class="tsel" border="0">
+                                    <tr>
+                                        <td><img class="selector" id="webcamimg" src="../assets/img/vid.png" onclick="setwebcam()" align="left" /></td>
+                                        <td><img class="selector" id="qrimg" src="../assets/img/cam.png" onclick="setimg()" align="right" /></td>
+                                    </tr>
+
+                                    <!-- Where cam will appear-->
+                                    <tr>
+                                        <td colspan="2" align="center">
+                                            <div id="outdiv">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+
+                        <!-- Data section where infos will be displayed once scanned -->
+                        <tr>
+                            <td colspan="3" align="center" style="padding-top: 10px; padding-bottom: 10px;">
+                                <img style="height: 20px; width: 20px;" src="../assets/img/arrow-down.png" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <!-- Where the scanned data will be displayed -->
+                            <td colspan="3" align="center" style="padding-top: 10px;">
+                                <div id="result"></div>
+                            </td>
+                        </tr>
+
+                        <tr>
+
+                            <!-- MODAL BUTTON -->
+                            <td colspan="3" align="center" style="padding-top: 15px;">
+                                <button id="addBtn" data-toggle="modal" data-target="#addModal" type="button" class="btn btn-link">Add violation</button>
+                            </td>
+                        </tr>
+
+
+                    
+
+                        
+
+
+                    </table>
+                    
+                    
+                </div>&nbsp;
+        
+            </div>
+
+
+        </div>
+
+        
+        <canvas id="qr-canvas" width="800" height="600"></canvas>
+        <script type="text/javascript">
+            load();
+        </script>
+
+        
+
+    </section>
+
+
+    <!-- Footer section -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-info">
+                            <h3>Violation System<span>.</span></h3>
+                            <p>
+                                Carlos Trinidad Avenue <br>
+                                Barangay Salawag, Dasmariñas, Cavite <br><br>
+                                <strong>Phone:</strong> (046) 416 4920<br>
+                                <strong>Email:</strong> www.cavitetup@ymail.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#team">Team</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> Violation Records</li>
+                            <li><i class="bx bx-chevron-right"></i> Scanning and creating QR codes</li>
+                            <li><i class="bx bx-chevron-right"></i> Systematic system</li>
+                            <li><i class="bx bx-chevron-right"></i> User-friendly interface</li>
+                        </ul>
+                    </div>    
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>COET-3B 2021</span></strong>. All Rights Reserved
+            </div>
+
+            <div class="credits">
+                <a href="http://www.tup.edu.ph/">Technological University of the Philippines</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <a href="#main" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+    <div id="preloader"></div>
+
+
+
+    <!-- ADD MODAL -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Add Violation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+
+                    <!-- ADDING VIOLATION FORM -->
+                    <form method="post" action='modal.php' id="addViolation" >
+
+                        <div class="form-group">
+                            <label for="addStudentID"><span style="color: red;">*</span>Student ID</label>
+                                <input type="text" class="form-control" name="addStudentID" id="addStudentID" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="addLastName"><span style="color: red;">*</span>Lastname</label>
+                            <input type="text" class="form-control" name="addLastName"id="addLastName" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addFirstName"><span style="color: red;">*</span>Firstname</label>
+                              <input type="text" class="form-control" name="addFirstName" id="addFirstName" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="addMiddleInitial">Middle Initial</label>
+                              <input type="text" class="form-control" name="addMiddleInitial" id="addMiddleInitial">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addCourse"><span style="color: red;">*</span>Course</label>
+                                <input type="text" class="form-control" name="addCourse" id="addCourse" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="addSection"><span style="color: red;">*</span>Section</label>
+                                <input type="text" class="form-control" name="addSection" id="addSection" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addStudentID"><span style="color: red;">*</span>Student No.</label>
+                                <input type="text" class="form-control" name="addStudentNo" id="addStudentNo" required>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="addSchoolYear"><span style="color: red;">*</span>School Year</label>
+                                <input type="text" class="form-control" name="addSchoolYear" id="addSchoolYear" required>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="addExistingViolation">Existing violation/s</label>
+                            <input type="text" class="form-control" name="addExistingViolation" id="addExistingViolation">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="addExistingComSer">Existing comm. service</label>
+                            <input type="text" class="form-control" name="addExistingComSer" id="addExistingComSer">
+                        </div>
+    
+    
+                        <div class="form-group">
+                            <label for="addRemainingComSerTime">Remaining comm. service time</label>
+                            <input type="number" class="form-control" name="addRemainingComSerTime" id="addRemainingComSerTime">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="addViolation"><span style="color: red;">*</span>Add violation</label>
+                            <input type="text" class="form-control" name="addViolation" id="addViolation" required>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="addComSer">Add comm. service</label>
+                            <input type="text" class="form-control" name="addComSer" id="addComSer" >
+                        </div>
+    
+    
+    
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addComSer"><span style="color: red;">*</span>Type of offense</label>
+                                <input type="text" class="form-control" name="addOffenseType" id="addOffenseType" required>
+                            </div>
+    
+                            <div class="form-group col-md-6">
+                                <label for="addComSerTime">Add comm. service time</label>
+                                <input type="number" class="form-control" name="addViolationTime" id="addViolationTime" >
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <!-- Add violation modal button submit -->
+                            <button type="submit" name="submit" id="addViolationBtn">Submit</button>
+
+                        </div>
+
+                        
+                        <!-- Add violation modal footer -->
+                        <div class="modal-footer justify-content-between">
+                            <medium>
+                                <p>
+                                    <b style="color: red;">Note:</b>
+                                    <i style="color: #ffbb38;">All input fields with <span style="color: red;">*</span>asterisks must not be blank.</i>
+                                    <i style="color: #ffbb38;">For the Type of Offense, please type in if First Offense, Second Offense or Third Offense.</i>
+                                    <i style="color: #ffbb38;">If the type of offense is 
+                                        <span style="text-decoration: underline">First Offense</span>
+                                        please don't put values on violator's comm. service and comm. service time. Their consequence only requires an apology letter.
+                                    </i>
+                                </p>
+                            </medium>
+                            
+                        </div>
+
+                    </form>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+    <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+    
+
+
+
+
+</body>
+
+</html>
