@@ -15,5 +15,8 @@ def innerpage(request):
 def scan(request):
     return render(request, 'task/scan.html')
 
+def v_table(request):
+    return render(request, 'task/v_table.html')
+
 def create(request):
     return render(request, 'task/create.html')   

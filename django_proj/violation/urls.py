@@ -6,5 +6,7 @@ urlpatterns = [
     path('login/', views.login, name='violation-login'),
     path('innerpage/', views.innerpage, name='violation-innerpage'),
     path('scan/', views.scan, name='violation-scan'),
-    path('create/', views.create, name='violation-create')
+    path('create/', views.create, name='violation-create'),
+    path('v_table/', views.v_table, name='violation-v_table')
+    
 ]
