@@ -8,3 +8,6 @@ def home(request):
 
 def login(request):
     return render(request, 'task/login.html')
+
+def innerpage(request):
+    return render(request, 'task/innerpage.html')
