@@ -11,3 +11,6 @@ def login(request):
 
 def innerpage(request):
     return render(request, 'task/innerpage.html')
+
+def scan(request):
+    return render(request, 'task/scan.html')
