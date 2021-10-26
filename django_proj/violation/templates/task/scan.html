@@ -240,8 +240,8 @@
                             <td valign="top" align="center" width="50%">
                                 <table class="tsel" border="0">
                                     <tr>
-                                        <td><img class="selector" id="webcamimg" src="../assets/img/vid.png" onclick="setwebcam()" align="left" /></td>
-                                        <td><img class="selector" id="qrimg" src="../assets/img/cam.png" onclick="setimg()" align="right" /></td>
+                                        <td><img class="selector" id="webcamimg" src="{% static 'img/vid.png' %}" onclick="setwebcam()" align="left" /></td>
+                                        <td><img class="selector" id="qrimg" src="{% static 'img/cam.png' %}" onclick="setimg()" align="right" /></td>
                                     </tr>
 
                                     <!-- Where cam will appear-->
@@ -259,7 +259,7 @@
                         <!-- Data section where infos will be displayed once scanned -->
                         <tr>
                             <td colspan="3" align="center" style="padding-top: 10px; padding-bottom: 10px;">
-                                <img style="height: 20px; width: 20px;" src="../assets/img/arrow-down.png" />
+                                <img style="height: 20px; width: 20px;" src="{% static 'img/arrow-down.png' %}" />
                             </td>
                         </tr>
                         <tr>
