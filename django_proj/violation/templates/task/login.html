@@ -1,3 +1,6 @@
+{% load static %}
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,10 +9,18 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+    
     <!-- Favicons -->
-    <link href="../assets/img/favicon.ico" rel="icon">
-    <link rel="stylesheet" href="style.css" />
-    <title>Violation System | Log-in</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'img/favicon.ico' %}">
+
+
+    <!-- MAIN STATIC CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login-style.css' %}">
+
+    
+  <title>Violation System | Log-in</title>
+
   </head>
 
   <!-- Sign-in/log-in form -->
@@ -70,7 +81,7 @@
               Sign up
             </button>
           </div>
-          <img src="img/signup.svg" class="image" alt="universe" />
+          <img src="{% static 'img/signup.svg' %}" class="image" alt="universe" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -82,13 +93,13 @@
               Sign in
             </button>
           </div>
-          <img src="img/login.svg" class="image" alt="mobile" />
+          <img src="{% static 'img/login.svg' %}" class="image" alt="mobile" />
         </div>
       </div>
     </div>
 
     <!-- script -->
-    <script src="app.js"></script>
+    <script src="{% static 'js/app.js' %}"></script>
     
   </body>
 </html>

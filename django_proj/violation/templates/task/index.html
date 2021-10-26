@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +13,12 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
+  <link rel="stylesheet" type="text/css" href="{% static 'img/favicon.ico' %}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS Files (WAG NYO NA YAN PANSININ EPAL LANG YAN) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -23,10 +26,20 @@
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  
+  <!-- Template Main CSS File (GALING SA STATIC NA FOLDER) -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/icofont/icofont.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/venobox/venobox.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/remixicon/remixicon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/aos/aos.css' %}">
+
+ 
 </head>
 
 
@@ -82,7 +95,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="assets/img/about.svg" class="img-fluid" alt="">
+            <img src="{% static 'img/about.svg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
             <h3>Systematic and conveniency</h3>
@@ -111,14 +124,14 @@
       <div class="container" data-aos="zoom-in">
 
         <div class="owl-carousel clients-carousel">
-          <img src="assets/img/clients/client-1.png" alt="">
-          <img src="assets/img/clients/client-2.png" alt="">
-          <img src="assets/img/clients/client-3.png" alt="">
-          <img src="assets/img/clients/client-4.png" alt="">
-          <img src="assets/img/clients/client-5.png" alt="">
-          <img src="assets/img/clients/client-6.png" alt="">
-          <img src="assets/img/clients/client-7.png" alt="">
-          <img src="assets/img/clients/client-8.png" alt="">
+          <img src="{% static 'img/clients/client-1.png' %}" alt="">
+          <img src="{% static 'img/clients/client-2.png' %}" alt="">
+          <img src="{% static 'img/clients/client-3.png' %}" alt="">
+          <img src="{% static 'img/clients/client-4.png' %}" alt="">
+          <img src="{% static 'img/clients/client-5.png' %}" alt="">
+          <img src="{% static 'img/clients/client-6.png' %}" alt="">
+          <img src="{% static 'img/clients/client-7.png' %}" alt="">
+          <img src="{% static 'img/clients/client-8.png' %}" alt="">
         </div>
 
       </div>
@@ -131,7 +144,12 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row">
-          <div class="image col-lg-6" style='background-image: url("assets/img/services.svg");' data-aos="fade-right"></div>
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static 'img/services.svg' %}" class="img-fluid" alt="">
+          </div>
+          
+
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="ri-qr-scan-2-line"></i>
@@ -206,7 +224,7 @@
         <div class="owl-carousel testimonials-carousel">
 
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/student-2.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'img/testimonials/student-2.jpg' %}" class="testimonial-img" alt="">
             <h3>Kris Arriesgado</h3>
             <h4>Student</h4>
             <p>
@@ -217,7 +235,7 @@
           </div>
 
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/student-1.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'img/testimonials/student-1.jpg' %}" class="testimonial-img" alt="">
             <h3>Jackielyn Burlaza</h3>
             <h4>Student</h4>
             <p>
@@ -228,7 +246,7 @@
           </div>
 
           <div class="testimonial-item">
-            <img src="assets/img/testimonials/student-3.jpg" class="testimonial-img" alt="">
+            <img src="{% static 'img/testimonials/student-3.jpg' %}" class="testimonial-img" alt="">
             <h3>Jigs Garcia</h3>
             <h4>Student</h4>
             <p>
@@ -258,7 +276,7 @@
           <div class="col-6 col-md-4 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/barci.jpg" class="img-fluid" alt="">
+                <img src="{% static 'img/team/barci.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -276,7 +294,7 @@
           <div class="col-6 col-md-4 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/team/alexis.jpg" class="img-fluid" alt="">
+                <img src="{% static 'img/team/alexis.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -294,7 +312,7 @@
           <div class="col-6 col-md-4 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="assets/img/team/jel.jpg" class="img-fluid" alt="">
+                <img src="{% static 'img/team/jel.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -447,8 +465,24 @@
   <script src="assets/vendor/counterup/counterup.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
+
+ 
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+
+
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 
