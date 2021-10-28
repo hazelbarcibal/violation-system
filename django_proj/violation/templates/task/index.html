@@ -6,8 +6,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Violation System</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -17,9 +15,6 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-
-  <!-- Template Main CSS File (GALING SA STATIC NA FOLDER) -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/icofont/icofont.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/boxicons/css/boxicons.min.css' %}">
@@ -28,11 +23,19 @@
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/remixicon/remixicon.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/aos/aos.css' %}">
 
+
+  {% block content %}
+  <title>Violation System</title>
+
+  <!-- Template Main CSS File (GALING SA STATIC NA FOLDER) -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
  
 </head>
 
 
 <body>
+
+
 
   <!-- Header -->
   <header id="header" class="fixed-top ">
@@ -373,7 +376,7 @@
   </main>
   
 
-
+  {% endblock %}
 
   <!-- Footer section -->
   <footer id="footer">
@@ -442,6 +445,7 @@
 
 
 
+
   <!-- Vendor JS Files -->
 
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -458,7 +462,6 @@
 
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
   <script src="{% static 'js/main.js' %}"></script>
 
 </body>
