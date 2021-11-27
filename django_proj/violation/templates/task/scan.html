@@ -288,34 +288,45 @@
 
 
                     <!-- ADDING VIOLATION FORM -->
-                    <form method="post" action='modal.php' id="addViolation" >
+                    <form method="POST" action= 'task/scan.html' id="addViolation" >
+                        {% csrf_token %}
+                        {{form }}
 
                         <div class="form-group">
                             <label for="addStudentID"><span style="color: red;">*</span>Student ID</label>
                                 <input type="text" class="form-control" name="addStudentID" id="addStudentID" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="addLastName"><span style="color: red;">*</span>Lastname</label>
-                            <input type="text" class="form-control" name="addLastName"id="addLastName" required>
-                        </div>
-
+                        
                         <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addLastName"><span style="color: red;">*</span>Lastname</label>
+                              <input type="text" class="form-control" name="addLastName" id="addLastName" required>
+                            </div>
+
                             <div class="form-group col-md-6">
                                 <label for="addFirstName"><span style="color: red;">*</span>Firstname</label>
-                              <input type="text" class="form-control" name="addFirstName" id="addFirstName" required>
+                              <input type="text" class="form-control" name="addFirstName" id="addFirstName">
+                            </div>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="addMiddleName">Middle Name</label>
+                              <input type="text" class="form-control" name="addMiddleName" id="addMiddleName">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="addMiddleInitial">Middle Initial</label>
-                              <input type="text" class="form-control" name="addMiddleInitial" id="addMiddleInitial">
+                                <label for="addCourse"><span style="color: red;">*</span>Course</label>
+                              <input type="text" class="form-control" name="addCourse" id="addCourse">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="addCourse"><span style="color: red;">*</span>Course</label>
-                                <input type="text" class="form-control" name="addCourse" id="addCourse" required>
+                                <label for="addMajor"><span style="color: red;">*</span>Major</label>
+                                <input type="text" class="form-control" name="addMajor" id="addMajor" required>
                             </div>
 
                             <div class="form-group col-md-6">
@@ -359,8 +370,8 @@
                         </div>
     
                         <div class="form-group">
-                            <label for="addComSer">Add comm. service</label>
-                            <input type="text" class="form-control" name="addComSer" id="addComSer" >
+                            <label for="addComSer"><span style="color: red;">*</span>Add comm. service</label>
+                            <input type="text" class="form-control" name="addComSer" id="addComSer" required>
                         </div>
     
     
@@ -372,8 +383,8 @@
                             </div>
     
                             <div class="form-group col-md-6">
-                                <label for="addComSerTime">Add comm. service time</label>
-                                <input type="number" class="form-control" name="addViolationTime" id="addViolationTime" >
+                                <label for="addComSerTime"><span style="color: red;">*</span>Add comm. service time</label>
+                                <input type="number" class="form-control" name="addViolationTime" id="addViolationTime" required>
                             </div>
                         </div>
 
