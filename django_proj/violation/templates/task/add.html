@@ -1,0 +1,60 @@
+{% extends 'task/index.html' %}
+{% load static %}
+{%load crispy_forms_tags %} 
+
+{% block content %}
+<title>Violation System | Add Violation</title>
+<!-- MAIN CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+
+
+
+<!-- Header -->
+<header id="header" class="fixed-top header-inner-pages">
+  <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="">violation system<span>.</span></a></h1>
+
+
+      <!-- Navigation bar -->
+      <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li ><a href="">Home</a></li>
+            <li><a href="">Scan QR</a></li>
+            <li><a href="">Add Violation</a></li>
+            <li><a href="">View Violation List</a></li>
+  
+
+          </ul>
+      </nav>
+
+      <a href="" class="logout-btn">Log-out</a>
+
+  </div>
+
+</header>
+
+
+
+  <div id="box">
+    <div id="shadow">
+      <div class="row justify-content-center" id="kahon">
+        <div class="col-7" id="lalagyan">
+          <center><h1>Add Violation</h1></center>
+              <br/>
+              <div class="container">
+                <form action="{% url 'violation:violation-add' %}" method="POST" class="addform">
+                  {% csrf_token %}
+                  {{ form|crispy }}
+                  <!--<input type="submit" value="Submit" class="btn btn-secondary"> -->
+                  <input type="submit" value="Submit" id="addBtn">
+                </form>
+        </div>
+
+      </div>
+    </div>
+    
+
+  </div>
+  
+{% endblock %}
