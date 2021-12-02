@@ -1,0 +1,95 @@
+{% extends 'task/index.html' %}
+{% load static %}
+{%load crispy_forms_tags %} 
+
+{% block content %}
+<title>Violation System | View Violation List</title>
+<!-- MAIN CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+
+
+
+<!-- Header -->
+<header id="header" class="fixed-top header-inner-pages">
+  <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="">violation system<span>.</span></a></h1>
+
+
+      <!-- Navigation bar -->
+      <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li ><a href="">Home</a></li>
+            <li><a href="">Scan QR</a></li>
+            <li><a href="">Add Violation</a></li>
+            <li><a href="">View Violation List</a></li>
+  
+
+          </ul>
+      </nav>
+
+      <a href="" class="logout-btn">Log-out</a>
+
+  </div>
+
+</header>
+
+
+
+  <div id="box">
+    <div id="shadow">
+      <div class="row justify-content-center" id="kahon">
+        <div class="col-7" id="lalagyan">
+          <center><h1>View Violation List</h1></center>
+              <br/>
+              <div class="container">
+                <form action="{% url 'violation:violation-add' %}" method="POST">
+                    <input class="form-control mb-4" name="changeViolation" type="number" placeholder="Please enter valid student ID">
+                    <center>
+                      <button type="submit" id="changeBtn">Change Violation</button>  
+                    </center>
+                    
+                </form>
+
+                <br/><br/>
+                <div class="row justify-content-center">
+                    <center>
+                        <table class="table table-dark table-hover">
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Course</th>
+                                <th>Major</th>
+                                <th>Section</th>
+                                <th>Lastname</th>
+                                <th>Firstname</th>
+                                <th>Violation</th>
+                                <th>Community Service</th>
+                                <th>Community Service Time (Hrs.)</th>
+                            </tr>
+
+                            {% for x in info %}
+                            <tr>
+                                <td>{{x.studentID}}</td>
+                                <td>{{x.course}}</td>
+                                <td>{{x.major}}</td>
+                                <td>{{x.section}}</td>
+                                <td>{{x.lastName}}</td>
+                                <td>{{x.firstName}}</td>
+                                <td>{{x.addViolation}}</td>
+                                <td>{{x.addComSer}}</td>
+                                <td>{{x.addComSerTime}}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>  
+                    </center>
+                    
+                </div>
+        </div>
+
+      </div>
+    </div>
+    
+
+  </div>
+  
+{% endblock %}

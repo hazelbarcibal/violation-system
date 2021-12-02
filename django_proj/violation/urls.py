@@ -10,4 +10,5 @@ urlpatterns = [
     path('create/', views.create, name='violation-create'),
     path('v_table/', views.v_table, name='violation-v_table'),
     path('add/', views.add, name='violation-add'),
+    path('table/', views.table, name='violation-table'),
 ]
