@@ -1,4 +1,3 @@
-from django.forms.widgets import NumberInput
 from django.shortcuts import render, redirect
 from .forms import addViolation
 from .forms import Records
@@ -32,12 +31,44 @@ def add(request):
             form.save()
             return redirect('/table')
 
-    return render(request, 'task/add.html', {'form':form})
+    context = {
+        'form': form,
+    }
+    return render(request, 'task/add.html', context)
+
 
 def table(request):
-    info = Records.objects.all()
+    num = ''
+    result = ''
+    info = Records.objects.all()[:3]
+    if 'changeViolation' in request.POST:
+        num = request.POST['changeViolation']
+        if num == '':
+            result = 'Invalid student ID. Please enter a valid one.'
+            info = []
+        else:
+            info = Records.objects.filter(studentID = num)
+            if info.count() == 0:
+                result = 'Student ID not found. Please try again.'
+            else:
+                print(info[0].pk)
+
     context = {
-        'info': info,    
+        'info': info,
+        'result': result,
     }
 
     return render(request, 'task/table.html', context)
+
+def edit(request, pk):
+    data = Records.objects.get(id=pk)
+    form = addViolation(request.POST or None, instance=data)
+    if form.is_valid():
+        form.save()
+        return redirect('violation-table')
+    
+    context = {
+        'data': data,
+        'form': form,
+    }
+    return render(request, 'task/edit.html', context)

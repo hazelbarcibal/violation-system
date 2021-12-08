@@ -1,4 +1,5 @@
 from django.db import models
+#from django.urls import reverse
 
 class Records(models.Model):
     course = [
@@ -8,6 +9,7 @@ class Records(models.Model):
         ('BTTE', 'Bachelor of Technical Teacher Education'),
     ]
 
+    #tinanggal yung CPET, need mag-makemigrations
     major = [
         ('AET', 'Automotive'),
         ('CT', 'Civil'),
@@ -18,7 +20,6 @@ class Records(models.Model):
         ('PPET', 'Powerplant'),
         ('ICT', 'Information Communication Technology'),
         ('IA', 'Industrial Arts'),
-        ('CPET', 'Computer Programming'),
         ('ME', 'Mechanical Engineering'),
         ('CE', 'Civil Engineering'),
         ('EE', 'Electrical Engineering'),
@@ -87,5 +88,3 @@ class Records(models.Model):
 
     def __str__(self):
         return self.studentID
-
-        

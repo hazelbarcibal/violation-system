@@ -3,7 +3,7 @@
 {%load crispy_forms_tags %} 
 
 {% block content %}
-<title>Violation System | Add Violation</title>
+<title>Violation System | Edit Violation</title>
 <!-- MAIN CSS -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
 
@@ -40,15 +40,17 @@
     <div id="shadow">
       <div class="row justify-content-center" id="kahon">
         <div class="col-7" id="lalagyan">
-          <center><h1>Add Violation</h1></center>
+          <center><h1>Edit Violation</h1></center>
               <br/>
               <div class="container">
                 <form action="" method="POST">
                   {% csrf_token %}
                   {{ form|crispy }}
                   <!--<input type="submit" value="Submit" class="btn btn-secondary"> -->
-                  <input type="submit" value="Submit" id="addBtn">
+                  <input type="submit" value="Update" id="addBtn">
                 </form>
+                <br/>
+                <a type="button" id="addBtn" href="{% url 'violation-table' %}">Cancel</a>
         </div>
 
       </div>
