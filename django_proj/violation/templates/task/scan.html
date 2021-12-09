@@ -159,10 +159,10 @@
             <!-- Navigation bar -->
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li class="active"><a href="">Scan QR</a></li>
-                    <li><a href="">Add Violation</a></li>
-                    <li><a href="">View Violation List</a></li>
+                    <li><a href="{% url 'violation-innerpage' %}">Home</a></li>
+                    <li class="active"><a href="{% url 'violation-scan' %}">Scan QR</a></li>
+                    <li><a href="{% url 'violation-add' %}">Add Violation</a></li>
+                    <li><a href="{% url 'violation-table' %}">View Violation List</a></li>
         
 
                 </ul>
