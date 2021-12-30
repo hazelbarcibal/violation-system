@@ -25,11 +25,12 @@
           <li><a href="{% url 'violation-add' %}">Add Violation</a></li>
           <li><a href="{% url 'violation-table' %}">View Violation List</a></li>
   
-
+          
         </ul>
       </nav>
 
-      <a href="{% url 'violation-home' %}" class="logout-btn">Log-out</a>
+      <span><a href="{% url 'violation-logout' %}" class="logout-btn">Log-out</a></span>
+      
 
     </div>
 
@@ -44,9 +45,8 @@
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
 
           <div class="col-xl-6 col-lg-8">
-            <h2>welcome<span>!</span></h2>
-            <h1>violation system<span>.</span></h1>
-            <h2>an online monitoring and record of TUPC student violation</h2>
+            <h1>welcome <span style="color: #ffc451; margin-right: 5px;">{{request.user}}</span><span>!</span></h1>
+            <h2>Technological University of the Philippines - Cavite online monitoring and record of student violation</h2>
           </div>
 
         </div>
