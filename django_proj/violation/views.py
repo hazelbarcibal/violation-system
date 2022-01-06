@@ -7,6 +7,7 @@ from .forms import Records
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -110,14 +111,17 @@ def table(request):
 
 @login_required(login_url='violation-signin')
 def edit(request, pk):
-    data = Records.objects.get(id=pk)
-    form = addViolation(request.POST or None, instance=data)
-    if form.is_valid():
-        form.save()
-        return redirect('violation-table')
-    
-    context = {
-        'data': data,
-        'form': form,
-    }
-    return render(request, 'task/edit.html', context)
+    if request.user.is_authenticated and request.user.is_superuser:
+        data = Records.objects.get(id=pk)
+        form = addViolation(request.POST or None, instance=data)
+        if form.is_valid():
+            form.save()
+            return redirect('violation-table')
+        
+        context = {
+            'data': data,
+            'form': form,
+        }
+        return render(request, 'task/edit.html', context)
+    else:
+        return HttpResponse('You are not authorized to access this page.')
