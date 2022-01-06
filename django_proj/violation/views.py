@@ -73,17 +73,20 @@ def create(request):
 
 @login_required(login_url='violation-signin')
 def add(request):
-    form = addViolation()
-    if request.method == 'POST':
-        form = addViolation(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('/table')
+    if request.user.is_authenticated and request.user.is_superuser:
+        form = addViolation()
+        if request.method == 'POST':
+            form = addViolation(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('/table')
 
-    context = {
-        'form': form,
-    }
-    return render(request, 'task/add.html', context)
+        context = {
+            'form': form,
+        }
+        return render(request, 'task/add.html', context)
+    else:
+        return HttpResponse('You are restricted to access this page. Please go back again.')
 
 @login_required(login_url='violation-signin')
 def table(request):
@@ -124,4 +127,4 @@ def edit(request, pk):
         }
         return render(request, 'task/edit.html', context)
     else:
-        return HttpResponse('You are not authorized to access this page.')
+        return HttpResponse('You are restricted to access this page. Please go back again.')
