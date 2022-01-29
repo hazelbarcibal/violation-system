@@ -1,8 +1,8 @@
 from django import forms
 from django.forms import ModelForm, fields, widgets
-from .models import Records
+from .models import Records, customUser
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 
 class addViolation(ModelForm):
     class Meta:
@@ -11,10 +11,13 @@ class addViolation(ModelForm):
 
 
 class CreateUserForm(UserCreationForm):
+
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        model = customUser
+        fields = ['username', 'email', 'password1', 'password2', 'userType',
+        'is_student', 'is_department']
+
         widgets = {
-            'email': forms.EmailInput(attrs={'required': True, 'placeholder': 'Email'}),
+            'email': forms.EmailInput(attrs={'required': True, 'placeholder': 'Email'}),    
         }
-        
+

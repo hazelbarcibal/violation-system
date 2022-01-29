@@ -1,4 +1,4 @@
-{% extends 'task/index.html' %}
+{% extends 'task/innerpage.html' %}
 {% load static %}
 
 
@@ -7,7 +7,7 @@
 <title>Violation System | Create QR</title>
 
 <!-- Template Main CSS File -->
-<link href="{% static 'css/scan-style.css' %}" rel="stylesheet">
+<link href="{% static 'css/try.css' %}" rel="stylesheet">
 
 
     <style type="text/css">
@@ -114,7 +114,7 @@
 
 
     <!-- Header -->
-    <header id="header" class="fixed-top header-inner-pages">
+    <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
             <h1 class="logo"><a href="{% url 'violation-innerpage' %}">violation system<span>.</span></a></h1>
@@ -124,9 +124,9 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li ><a href="{% url 'violation-innerpage' %}">Home</a></li>
-                    <li class="active"><a href="{% url 'violation-scan' %}">Scan QR</a></li>
-                    <li><a href="{% url 'violation-add' %}">Add Violation</a></li>
-                    <li><a href="{% url 'violation-table' %}">View Violation List</a></li>
+                    <li class="active"><a href="{% url 'violation-scanQR' %}">Scan QR</a></li>
+                    <li><a href="{% url 'violation-addViolation' %}">Add Violation</a></li>
+                    <li><a href="{% url 'violation-list' %}">View Violation List</a></li>
 
 
                 </ul>
@@ -139,12 +139,12 @@
     </header>
 
 
-    <section class="inner-page">
+    <section class="kahon">
         <div id="bg">
             <div id="main" data-aos="fade-up" data-aos-delay="150">
                 <div id="main">
                     <div id="header">
-                        <p id="mp1">
+                        <p id="mp1" style="padding-top: 5px;">
                             QR Code scanner
                         </p>
 
@@ -152,10 +152,10 @@
 
                             <ul class="nav justify-content-center">
                                 <li class="nav-item">
-                                    <a id="scanLink" class="nav-link active" href="{% url 'violation-scan' %}">Scan QR</a>
+                                    <a id="scanLink" class="nav-link active" href="{% url 'violation-scanQR' %}">Scan QR</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="createLink" class="nav-link" href="{% url 'violation-create' %}">Create QR</a>
+                                    <a id="createLink" class="nav-link" href="{% url 'violation-createQR' %}">Create QR</a>
                                 </li>
                             </ul>
 
@@ -214,7 +214,7 @@
                             <!-- Create "button" (basta kung san pipindutin para magcreate ng QR) -->
                             <tr>
                                 <td align="center" style="padding-top: 10px;">
-                                    <div class="button" onclick="create()">Create</div>
+                                    <div class="button" id="createBtn" onclick="create()">Create</div>
                                 </td>
                             </tr>
 

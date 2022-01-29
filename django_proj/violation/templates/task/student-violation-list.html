@@ -13,16 +13,15 @@
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="{% url 'violation-innerpage' %}">violation system<span>.</span></a></h1>
+      <h1 class="logo"><a href="{% url 'violation-studentHome' %}">violation system<span>.</span></a></h1>
 
 
       <!-- Navigation bar -->
       <nav class="nav-menu d-none d-lg-block">
           <ul>
-            <li ><a href="{% url 'violation-innerpage' %}">Home</a></li>
-            <li><a href="{% url 'violation-scanQR' %}">Scan QR</a></li>
-            <li><a href="{% url 'violation-addViolation' %}">Add Violation</a></li>
-            <li><a href="{% url 'violation-list' %}">View Violation List</a></li>
+            <li><a href="{% url 'violation-studentHome' %}">Home</a></li>
+            <li><a href="{% url 'violation-studentAbout' %}">About</a></li>
+            <li class="active"><a href="{% url 'violation-studentViolation' %}">View Violation List</a></li>
   
 
           </ul>
@@ -43,11 +42,11 @@
           <center><h1>View Violation List</h1></center>
               <br/>
               <div class="container">
-                <form action="" method="POST">
+                <form action="" method="GET">
                   {% csrf_token %}
-                    <input class="form-control mb-4" name="changeViolation" type="text" placeholder="Please enter valid student ID">
+                    <input class="form-control mb-4" name="viewViolation" type="text" placeholder="Please enter valid student ID">
                     <center>
-                      <button type="submit" id="changeBtn" >Search Student ID</button>
+                      <button type="submit" class="searchBtn" >Search Student ID</button>
                     </center>
                 </form>
                 <br/>
@@ -60,12 +59,6 @@
                       var m = "{{ message }}";
                       swal("Notice: ", m, "info")
                     </script>
-                  {% elif message.tags == 'success' %}
-                  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                  <script>
-                    var m = "{{ message }}";
-                    swal("Success! ", m, "success")
-                  </script>
                   {% endif %}
                 {% endfor %}
                 
@@ -87,7 +80,6 @@
                                 <th>Status</th>
                                 <th>Community Service</th>
                                 <th>Community Service Time (Hrs.)</th>
-                                <th>Action</th>
                             </tr>
 
                             {% for x in info %}
@@ -102,7 +94,6 @@
                                 <td>{{x.statusType}}</td>
                                 <td>{{x.addComSer}}</td>
                                 <td>{{x.addComSerTime}}</td>
-                                <td><a href="{% url 'violation-edit' x.id %}">Update</a></td>
                             </tr>
                             {% endfor %}
                         </table>  

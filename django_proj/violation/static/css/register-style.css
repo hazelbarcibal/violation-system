@@ -17,16 +17,18 @@ body{
 }
 .content{
   width: 430px;
-  padding: 40px 30px;
+  padding: 20px 30px;
   background: #dde1e7;
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff73,
                2px 2px 5px rgba(34, 53, 87, 0.288);
 }
-.content .text{
+.text{
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 33px;
   font-weight: 600;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
   color: #6b4db2;
 }
 
@@ -155,3 +157,18 @@ body{
 .sign-up a:hover{
   text-decoration: underline;
 }
+
+.field select{
+  height: 50px;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #dde1e7;
+  color: #595959;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #BABECC,
+              inset -5px -5px 10px #ffffff73;
+}
+

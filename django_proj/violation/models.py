@@ -1,5 +1,5 @@
 from django.db import models
-#from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
 
 class Records(models.Model):
     course = [
@@ -9,7 +9,6 @@ class Records(models.Model):
         ('BTTE', 'Bachelor of Technical Teacher Education'),
     ]
 
-    #tinanggal yung CPET, need mag-makemigrations
     major = [
         ('AET', 'Automotive'),
         ('CT', 'Civil'),
@@ -69,6 +68,11 @@ class Records(models.Model):
         ('Third Offense', 'Third Offense'),
     ]
 
+    statusType = [
+        ('Ongoing community service', 'Ongoing community service'),
+        ('Completed community service', 'Completed community service'),
+    ]
+
 
 
     studentID = models.CharField(max_length = 50,verbose_name = 'studentID')
@@ -84,7 +88,28 @@ class Records(models.Model):
     addComSer = models.CharField(max_length= 100, choices= addComSer, verbose_name= 'addComSer', default= '')
     offenseType = models.CharField(max_length= 25, choices= offenseType, verbose_name= 'offenseType', default= '')
     addComSerTime = models.DecimalField(max_digits=2, decimal_places= 0, verbose_name= 'addComSerTime')
+    statusType = models.CharField(max_length = 50, choices = statusType, verbose_name = 'statusType', default = '')
 
 
     def __str__(self):
         return self.studentID
+
+class customUser(AbstractUser):
+    userType = [
+        ('student', 'Student'),
+        ('department', 'OSA-Department'),
+    ]
+
+    userType = models.CharField(max_length=20, choices=userType, verbose_name='userType', default='')
+    email = models.EmailField(max_length=25, unique=True, verbose_name='email', default='')
+    username = models.CharField(max_length=25, unique=True, verbose_name='username', default='')
+    is_student = models.BooleanField(default=False)
+    is_department = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.username
+
+

@@ -1,16 +1,16 @@
-{% extends 'task/index.html' %}
+{% extends 'task/innerpage.html' %}
 {% load static %}
 {%load crispy_forms_tags %} 
 
 {% block content %}
 <title>Violation System | Add Violation</title>
 <!-- MAIN CSS -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/add.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/add-style.css' %}">
 
 
 
 <!-- Header -->
-<header id="header" class="fixed-top header-inner-pages">
+<header id="header" class="fixed-top">
   <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="{% url 'violation-innerpage' %}">violation system<span>.</span></a></h1>
@@ -20,9 +20,9 @@
       <nav class="nav-menu d-none d-lg-block">
           <ul>
             <li ><a href="{% url 'violation-innerpage' %}">Home</a></li>
-            <li><a href="{% url 'violation-scan' %}">Scan QR</a></li>
-            <li><a href="{% url 'violation-add' %}">Add Violation</a></li>
-            <li><a href="{% url 'violation-table' %}">View Violation List</a></li>
+            <li><a href="{% url 'violation-scanQR' %}">Scan QR</a></li>
+            <li><a href="{% url 'violation-addViolation' %}">Add Violation</a></li>
+            <li><a href="{% url 'violation-list' %}">View Violation List</a></li>
   
 
           </ul>
@@ -35,10 +35,23 @@
 </header>
 
 
+{% for message in messages %}
+  {% if message.tags == 'info' %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+      var m = "{{ message }}";
+      swal("Notice: ", m, "info")
+    </script>
+
+  {% endif %}
+{% endfor %}
+
+
+
 
   <div id="box">
     <div id="shadow">
-      <div class="row justify-content-center" id="kahon">
+      <div class="row justify-content-center" id="kahon" data-aos="fade-up" data-aos-delay="150">
         <div class="col-7" id="lalagyan">
           <center><h1>Add Violation</h1></center>
               <br/>
@@ -46,7 +59,6 @@
                 <form action="" method="POST">
                   {% csrf_token %}
                   {{ form|crispy }}
-                  <!--<input type="submit" value="Submit" class="btn btn-secondary"> -->
                   <input type="submit" value="Submit" id="addBtn">
                 </form>
         </div>
@@ -54,7 +66,7 @@
       </div>
     </div>
     
-
   </div>
+
   
 {% endblock %}

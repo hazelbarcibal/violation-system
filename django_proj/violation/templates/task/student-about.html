@@ -1,0 +1,184 @@
+{% extends 'task/innerpage.html' %}
+{% load static %}
+
+{% block content %}
+  <title>Violation System | About</title>
+  
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/student-about-style.css' %}" rel="stylesheet">
+
+
+  <!-- Header -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'violation-studentHome' %}">violation system<span>.</span></a></h1>
+
+
+      <!-- Navigation bar -->
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+            <li><a href="{% url 'violation-studentHome' %}">Home</a></li>
+            <li class="active"><a href="{% url 'violation-studentAbout' %}">About</a></li>
+            <li><a href="{% url 'violation-studentViolation' %}">View Violation List</a></li>
+          
+        </ul>
+      </nav>
+
+      <span><a href="{% url 'violation-logout' %}" class="logout-btn">Log-out</a></span>
+      
+
+    </div>
+
+  </header>
+
+
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>RULES ON STUDENT CONDUCT AND DISCIPLINE</h1><br>
+          <span style="size: 10px; color: #ffc451;"><i>© 2013 REVISED STUDENT HANDBOOK</i></span><br>
+          <span style="size: 10px; color: #ffc451;">TECHNOLOGICAL UNIVERSITY OF PHILIPPINES</span>
+
+          
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="{% static 'img/about-1.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <h3>Section 1. BASIS</h3>
+          <p class="font-italic"">
+            These rules are promulgated pursuant to the valid exercise of academic freedom accorded by the 1987 Philippine Constitution and
+            enjoyed by all institutions of higher learning.
+            The pertinent provisions of the TUP Charter (Presidential Decree No.
+            1518), the TUP Code and Republic Act No. 8292, otherwise known as the
+            Higher Education Modernization Act of 1997 and its Implementing Rules
+            and Regulations are also cited as bases.
+        </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right" data-aos-delay="100">
+          <h3>Section 2. SCOPE/APPLICABILITY</h3>
+            <p class="font-italic"">
+                These rules shall apply to all bonafide
+                students in all campuses of the University, including those concerned
+                parties as herein provided.
+            </p>
+
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <img src="{% static 'img/about-2.svg' %}" class="img-fluid" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+          <img src="{% static 'img/about-3.svg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+          <h3>Section 3. NORMS OF CONDUCT</h3>
+            <p class="font-italic"">
+                1. Each student must strictly adhere to the academic standards
+                of the University and to intellectual honesty. He must be
+                faithful to his pledge and refrain from committing acts of
+                misconduct as defined by the University rules and those
+                that are in violation of existing laws, rules and regulations
+                of the University and of the Government.<br><br>
+
+                2. Wearing of Prescribed Uniform. Every student shall wear the
+                prescribed uniform (bearing the TUP IPO-registered logo)
+                on Monday, Tuesday, Thursday and Friday. Students, are
+                likewise, required to wear their laboratory/shop uniforms during their laboratory/shop periods, the prescribed PE
+                uniform during their PE classes and the Citizen Military
+                Training uniform during the training days. However,
+                students are allowed entry wearing their PE Uniforms only
+                if their PE class schedule is their fi rst subject for the day,
+                after which they have to change to their prescribed uniform.<br><br>
+
+                3. I.D Requirement. Every student shall wear the official
+                identification card (I.D) at all times inside the university.<br><br>
+
+                4. Hair Cut for Male Students. Male students shall sport a
+                clean and decent haircut regardless of whether the student
+                is enrolled or not in the NSTP.<br><br>
+
+                5. Hair Color. All students are not allowed to have their hair
+                dyed.<br><br>
+
+                6. Student Attendance. Every student shall attend classes
+                promptly and regularly. In all cases of absences, a student
+                may only be readmitted to his classes upon presentation of
+                a letter of excuse signed by his parent/guardian, as the case
+                maybe, and duly certified by the Office of Student Affairs.
+            </p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right" data-aos-delay="100">
+          <h3>Section 4. ACTS OF MISCONDUCT AND THEIR SANCTIONS</h3>
+            <p class="font-italic"">
+                    <strong>a.  Major Offenses</strong> <br>
+                    Major offenses include those acts of omission that seriously violate the preservation of life or property or the dignity of the
+                    University, its officials, employees or students. These, likewise,
+                    include violations of laws and ordinances. <br><br>
+
+                    <strong>b.  Minor Offenses</strong> <br>
+                    All other offenses not listed under the major offenses are 
+                    classified as minor offenses. <br><br>
+            </p>
+
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <img src="{% static 'img/about-4.svg' %}" class="img-fluid" alt="">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+{% endblock %}

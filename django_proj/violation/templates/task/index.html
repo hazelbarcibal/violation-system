@@ -10,7 +10,10 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link rel="stylesheet" type="text/css" href="{% static 'img/favicon.ico' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -24,11 +27,11 @@
   <link rel="stylesheet" type="text/css" href="{% static 'vendor/aos/aos.css' %}">
 
 
+
   {% block content %}
   <title>Violation System</title>
 
-  <!-- Template Main CSS File (GALING SA STATIC NA FOLDER) -->
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index-style.css' %}">
  
 </head>
 
@@ -68,7 +71,7 @@
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>violation system<span>.</span></h1>
-          <h2>an online monitoring and record of TUPC student violation</h2>
+          <h2>Technological University of the Philippines - Cavite Online Monitoring and Student Violation Records</h2>
         </div>
 
       </div>
@@ -87,7 +90,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'img/about.svg' %}" class="img-fluid" alt="">
+            <img src="{% static 'img/main-1.svg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
             <h3>Systematic and conveniency</h3>
@@ -138,7 +141,7 @@
         <div class="row">
 
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-            <img src="{% static 'img/services.svg' %}" class="img-fluid" alt="">
+            <img src="{% static 'img/main-2.svg' %}" class="img-fluid" alt="">
           </div>
           
 
@@ -270,15 +273,16 @@
               <div class="member-img">
                 <img src="{% static 'img/team/barci.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href="#"><i class="icofont-twitter"></i></a>
+                  <a href="https://www.facebook.com/hzlnnm.barci"><i class="icofont-facebook"></i></a>
+                  <a href="#"><i class="icofont-instagram"></i></a>
                 </div>
               </div>
 
               <div class="member-info">
                 <h4>Hazel Ann Mae Barcibal</h4>
-                <span>Web Designer/Programmer</span>
+                <span>Frontend/Backend Developer</span>
+                <span>email: hazelbarci09@gmail.com</span>
               </div>
             </div>
           </div>
@@ -286,17 +290,18 @@
           <div class="col-6 col-md-4 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="{% static 'img/team/alexis.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'img/team/marco.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
+                  <a href="#"><i class="icofont-twitter"></i></a>
+                  <a href="https://www.facebook.com/marcopaolo.s.asuncion"><i class="icofont-facebook"></i></a>
+                  <a href="https://www.instagram.com/paolo_shirt/"><i class="icofont-instagram"></i></i></a>
                   
                 </div>
               </div>
               <div class="member-info">
-                <h4>Paul Alexis Julian</h4>
-                <span>Consultant/Programmer</span>
+                <h4>Marco Paolo Asuncion</h4>
+                <span>Frontend Developer</span>
+                <span>email: mpaolo0599@gmail.com</span>
               </div>
             </div>
           </div>
@@ -304,16 +309,17 @@
           <div class="col-6 col-md-4 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="{% static 'img/team/jel.jpg' %}" class="img-fluid" alt="">
+                <img src="{% static 'img/team/levy.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
+                  <a href="https://twitter.com/LevyBatario"><i class="icofont-twitter"></i></a>
+                  <a href="https://www.facebook.com/LevyBatario"><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Jelvina Camacho</h4>
-                <span>Project Manager</span>
+                <h4>Levy Batario</h4>
+                <span>Frontend Developer</span>
+                <span>email: levybatario@gmail.com</span>
               </div>
             </div>
           </div>
@@ -406,10 +412,10 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'violation-home' %}">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#team">Team</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'violation-home' %}">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'violation-home' %}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'violation-home' %}">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'violation-home' %}">Contact</a></li>
               </ul>
           </div>
 
@@ -432,7 +438,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>COET-3B 2021</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>COET-4A 2021-2022</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <a href="http://www.tup.edu.ph/">Technological University of the Philippines</a>
@@ -442,6 +448,7 @@
 
   <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
   <div id="preloader"></div>
+
 
 
 

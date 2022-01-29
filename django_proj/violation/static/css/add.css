@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/building-1.jpeg") top center;
+  background: url("../img/TUP_Cavite_Main_Gate.jpg") top center;
   background-size: cover;
   position: relative;
   overflow: visible;
@@ -625,7 +625,7 @@ section {
 #box{
   padding: none;
   padding-left: none;
-  background: url("../img/building-1.jpeg") top center;
+  background: url("../img/TUP_Cavite_Main_Gate.jpg") top center;
   background-size: cover;
 }
 

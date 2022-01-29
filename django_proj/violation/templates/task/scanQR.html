@@ -1,4 +1,4 @@
-{% extends 'task/index.html' %}
+{% extends 'task/innerpage.html' %}
 
 {% load static %}
 
@@ -7,7 +7,7 @@
 <title>Violation System | Scan QR</title>
 
 <!-- Template Main CSS File -->
-<link href="{% static 'css/scan-style.css' %}" rel="stylesheet">
+<link href="{% static 'css/try.css' %}" rel="stylesheet">
     
     
 
@@ -160,9 +160,9 @@
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li><a href="{% url 'violation-innerpage' %}">Home</a></li>
-                    <li class="active"><a href="{% url 'violation-scan' %}">Scan QR</a></li>
-                    <li><a href="{% url 'violation-add' %}">Add Violation</a></li>
-                    <li><a href="{% url 'violation-table' %}">View Violation List</a></li>
+                    <li class="active"><a href="{% url 'violation-scanQR' %}">Scan QR</a></li>
+                    <li><a href="{% url 'violation-addViolation' %}">Add Violation</a></li>
+                    <li><a href="{% url 'violation-list' %}">View Violation List</a></li>
         
 
                 </ul>
@@ -184,17 +184,17 @@
                     <div style="position:relative;top:+20px;left:0px;">
                         <g:plusone size="medium"></g:plusone>
                     </div>
-                    <p id="mp1">
+                    <p id="mp1" style="padding-top: 18px;">
                         QR Code scanner
                     </p>
                     <div class="navQR">
 
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
-                                <a id="scanLink" class="nav-link active" href="{% url 'violation-scan' %}">Scan QR</a>
+                                <a id="scanLink" class="nav-link active" href="{% url 'violation-scanQR' %}">Scan QR</a>
                             </li>
                             <li class="nav-item">
-                                <a id="createLink" class="nav-link" href="{% url 'violation-create' %}">Create QR</a>
+                                <a id="createLink" class="nav-link" href="{% url 'violation-createQR' %}">Create QR</a>
                             </li>
                         </ul>
 
@@ -232,7 +232,7 @@
                         </tr>
                         <tr>
                             <!-- Where the scanned data will be displayed -->
-                            <td colspan="3" align="center" style="padding-top: 10px;">
+                            <td colspan="3" align="center" style="padding-top: 10px; padding-bottom: 5px;">
                                 <div id="result"></div>
                             </td>
                         </tr>
@@ -240,7 +240,7 @@
                         <tr>
 
                             <td colspan="3" align="center" style="padding-top: 15px;">
-                                <a href="{% url 'violation-add' %}" type="button" id="addBtn" class="btn btn-link">Add to violation</a>
+                                <a href="{% url 'violation-addViolation' %}" type="button" id="addBtn" class="btn btn-link">Add to violation</a>
 
                             </td>
                         </tr>
